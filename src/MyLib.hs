@@ -27,14 +27,15 @@ mySum :: [Int] -> Int
 mySum []  = 0
 mySum (x:xs) = x + mySum xs
 
--- 图书借阅管理
+add1 :: Num a => a -> a->a
+add1 x y = x + y
 
--- 查看某本书的借阅者
-borrowers::DataBase -> Book -> [Borrower]
-borrowers db book = [p | (p,b) <- db, b == book]
+myMax :: Ord a => a->a->a
+myMax x y = if x > y then x else y
 
--- 某读者借了几本书
+doubleAll :: [Int] -> [Int]
+doubleAll [] = []
+doubleAll (x:xs) = 2 * x : doubleAll xs
 
-exampleData = [("Alice", "Haskell: The Craft of Functional"),
-("Alice", "A river runs through it"),
-("Grats", "Haskell functional programming")]
+doubleAll2 :: [Int] -> [Int]
+doubleAll2 xs = [2 * x | x<-xs]
