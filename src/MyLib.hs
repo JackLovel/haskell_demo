@@ -39,3 +39,13 @@ doubleAll (x:xs) = 2 * x : doubleAll xs
 
 doubleAll2 :: [Int] -> [Int]
 doubleAll2 xs = [2 * x | x<-xs]
+
+-- lambda
+double = \x->2*x
+
+doubleAll3 :: [Int] -> [Int]
+doubleAll3 xs = map (\x->2*x) xs
+
+-- 自定义代数数据类型
+data Season = Spring | Summer | Fail | Winter
+  deriving(Eq, Show)
